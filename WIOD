@@ -1,0 +1,30 @@
+
+//WWZ Decomposition: Source: https://github.com/bquast/wiod/commit/0e5ba04bd3c658c30d46750ea07e400b600c1f5a
+library(decompr)
+library(wiod)
+library(ggplot2)
+library(dplyr)
+ wiot.2014  <- getWIOT(period = 2014, format = "list")
+ industries <- 1:56
+ countries  <- unique(substring(names(wiot.2014$x), 1, 3))
+ decomp     <- decomp(x = wiot.2014$Z,
+      y = wiot.2014$F,
+      k = countries,
+ 	    i = industries,
+      o = wiot.2014$x,
+      V = wiot.2014$v,
+
+method = "wwz",
+verbose = TRUE)
+
+//Leontief Decomposition: Source: https://github.com/bquast/wiod/commit/0e5ba04bd3c658c30d46750ea07e400b600c1f5a
+wiot.2014<- getWIOT(period = 2014, format = "list")
+industries <- 1:56
+countries <- unique(substring(names(wiot.2014$x), 1, 3))
+lien14 <- decomp(x = wiot.2014$Z,
+                 y = wiot.2014$F,
+                 k = countries,
+                 i = industries,
+                 o = wiot.2014$x,
+                 method = "leontief",
+                 verbose = TRUE)
