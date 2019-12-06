@@ -476,5 +476,7 @@ load("F:/../WIOT_2016 (2000-2014).RData")
 		C_Mean_Power<-C_Mean_Power%>%mutate(Constraint_Dir=log(Constraint_Dir_Exp)-log(Constraint_Dir_Imp))
 		C_Mean_Power<-C_Mean_Power%>%mutate(Constraint_Ind=log(Constraint_Dir_Ind_Exp)-log(Constraint_Dir_Ind_Imp))
     
-  # Final
+  # For Traditional
 	save.image("F:/Users/qhannn/Desktop/Regression/Operation/VA.RData")
+# For DVA 
+	save.image("F:/Users/qhannn/Desktop/Regression/Operation/DVA.RData")
