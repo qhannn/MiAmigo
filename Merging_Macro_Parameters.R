@@ -29,6 +29,7 @@
 				check.packages(packages)
 
 # Load Files
+# This files have attached in this project 
 	Country_Categories  	<- read_excel("../Country_Categories.xls")
 		GDP_World 				<- read_excel("../GDP_World.xls")
 		GDPChange_World 		<- read_excel("../GDPChange_World.xlsx")
@@ -39,11 +40,11 @@
 
 
 
-	load("F:/Users/qhannn/Desktop/Regression/Operation/VA.RData")
+	load("F:/../VA.RData")
 		C_Mean_Power_VA<-C_Mean_Power
 		C_Wgted_Power_VA<-C_Wgted_Power
 
-	load("F:/Users/qhannn/Desktop/Regression/Operation/DVA.RData")
+	load("F:/../DVA.RData")
 		C_Mean_Power_DVA<-C_Mean_Power
 		C_Wgted_Power_DVA<-C_Wgted_Power
 
