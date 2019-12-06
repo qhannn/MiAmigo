@@ -1,3 +1,11 @@
+# Clean the memory for a smooth process
+	rm(list = ls(all.names = TRUE))
+		x <- 1
+		repeat  {print(gc())
+			x = x+1
+			if (x ==20){break}
+					}
+	rm(x)
 # Decomp and Wiod packages for data scratching and wwz decomposition Source: https://github.com/bquast/
 
 #_________Loading the Packages_______________
@@ -61,48 +69,29 @@ getWIOT <- function(period = 2010,
  
 
 # Data downloading and naming
- for (a in 2000:2014) 
+ for (a in 2000:2001) 
      { 
       # paste function in R with sep argument
     
     assign(paste("wiot.", a, sep=""),getWIOT(period = a, format = "list"))
  
      }
-   
-
- for (a in 2000:2014) 
-     { 
-
 # Year 2000-2014 Data iot to wwz decomposed dataframe
-  industries <- 1:56
+        wwz<-list() 
+        for (a in 2000:2001) 
+             { 
 
-  b<-get(paste("wiot.", a, sep=""))
-
-  countries <- unique(substring(names(b$x), 1, 3))
-  
-  assign(paste("decomp", a, sep=""),
-                   decomp(x = b$Z,
-                   y = b$F,
-                   k = countries,
-                   i = industries,o = b$x,
-                   V = b$v,
-                  method = "wwz",
-                  verbose = TRUE))
-    }
+          industries <- 1:56
+          b<-get(paste("wiot.", a, sep=""))
+          countries <- unique(substring(names(b$x), 1, 3))
+          d<-assign(paste("decomp", a, sep=""),
+                           decomp(x = b$Z,
+                           y = b$F,
+                           k = countries,
+                           i = industries,o = b$x,
+                           V = b$v,
+                          method = "wwz",
+                          verbose = TRUE))
+                 wwz<-cbind(wwz,d)
+            }
     
-  # putting all the years data together
-   wwz<-rbind(decomp2000,
-              decomp2001,
-              decomp2002,
-              decomp2003,
-              decomp2004,
-              decomp2005,
-              decomp2006,
-              decomp2007,
-              decomp2008,
-              decomp2009,
-              decomp2010,
-              decomp2011,
-              decomp2012,
-              decomp2013,
-              decomp2014)
