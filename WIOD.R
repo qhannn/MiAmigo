@@ -69,7 +69,7 @@ getWIOT <- function(period = 2010,
  
 
 # Data downloading and naming
- for (a in 2000:2001) 
+ for (a in 2000:2014) 
      { 
       # paste function in R with sep argument
     
@@ -78,7 +78,7 @@ getWIOT <- function(period = 2010,
      }
 # Year 2000-2014 Data iot to wwz decomposed dataframe
         wwz<-list() 
-        for (a in 2000:2001) 
+        for (a in 2000:2014) 
              { 
 
           industries <- 1:56
