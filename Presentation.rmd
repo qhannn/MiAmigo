@@ -1,0 +1,1567 @@
+---
+title: "Power Relations on Bilateral Trade and their impact on GVC Networks "
+author: "Kagan CAKIN"
+date: "December 3, 2019"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+fontsize: 10pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Contents
+
+- Introduction
+- Literature
+- Data
+- Methodology
+- Descriptive Analysis
+- Regressions
+
+## Introduction
+
+Along with decreasing trade cost and ICT advancement, the global trade network becomes ever complex. Conventional indexes, which are more focused on comparative advantage of products rather than bilateral power balance, are facing increasing challenges to interpret current trade relations. 
+
+Aim of this study is to investigate how asymmetric Power Relations impact on export import distributions (for both Traditional Trade and GVC),  and GDP growth on Global Trade Network. 
+   
+
+## Literature
+
+* Theorical Thinking - Dependency Theory
+ Raul Prebisch and Hans Singer (1940s)
+
+* Index Fundemental-RCA
+Vollrath, T.L. (1991), "A Theoretical Evaluation of Alternative Trade Intensity Measures of Revealed Comparative Advantage", Weltwirtschaftliches Archiv, 130, 265-79. 
+
+* Adoptation to Trade Networks
+Burt (1995)
+Inoue (2018)
+
+## Data
+
+- Trade Data 2000-2014 from  _WIOT 2016_.
+- GDP Data 2000-2014 from _IMF 2017_.
+- Country Income Categorization _World Bank 2018_.
+
+
+## Theorical Thinking - Dependency Theory
+
+Raul and Hans Singer (1940s)
+Dependency theory is the notion that resources flow from a "periphery" of poor and underdeveloped states to a "core" of wealthy states, enriching the latter at the expense of the former. It is a central contention of dependency theory that poor states are impoverished and rich ones enriched by the way poor states are integrated into the "world system".
+
+A common explanation for this supposed phenomenon is that manufactured goods have a greater income elasticity of demand than primary products. Therefore, as incomes rise, the demand for manufactured goods increases more rapidly than demand for primary products.
+
+Foreign trade structure is an important economic determinant of national power that is the coercion power one nation may have against other nations (Hirschman,
+1945). There have been many cases wherein the trade restriction was used to coerce or influence other nations'political behavior. 
+
+## Index Fundemental-RCA
+
+Vollrath, T.L. (1991), "A Theoretical Evaluation of Alternative Trade Intensity Measures of Revealed Comparative Advantage", Weltwirtschaftliches Archiv, 130, 265-79. 
+ 
+* RCA9 may be the preferred revealed-competitive-advantage RCA index because it is less susceptible to policy-induced distortions than RCAI0.
+* However, it is important to note that RCAI0 adhere more closely to actual comparative advantage than RCA9 when abstracting from distortionary influences. Unlike RCA9, the measures. RCAI0 use export and import data and, therefore, embody both the relative demand and relative supply dimensions. 
+* Another attraction is that RCAI0 are consistent with the real world phenomenon of two-way trade. 
+* One problem with RCAIO is its extreme sensitivity to small values
+of exports or imports of the specified commodity. 
+* Another arises when two-way trade does not occur, as would be the case with perfect
+specialization. 
+
+## Trade Network Analysis
+
+There have been cases wherein the trade restriction was used to coerce or influence other nations'political behavior in the region. (Inoue 2018)
+ 
+De Benedictis (2013) firstly introduced 'network indices'
+such as 'degree centrality' and 'distance centrality' for
+estimating the national economic power in the international
+trade network. 
+
+According to Burt (1995) , an actor who can get a bird-eye view of the 'structural holes' (absence of connection) can increase 'autonomy' or 'constraint power'on the actors at the both endpoints of holes by utilizing a monopolistic status onto the information. 
+
+## Methodology - RCA
+
+* RCA-based Formula
+
+Revealed Comparative Advantage;
+
+$$\small\begin{align}
+&RCA10^a_{i}=ln(RXA^a_{i})-ln(RMA^a_{i})\textit{ (Vollrath 1998)}&(1)\\
+&\text{ where}\\
+&~~~~RXA^a_{i}=(X^i_{a}/\sum_{t}X^i)/(X^r_{a}/\sum_{t}X^r)&(2)\\
+&~~~~RMA^a_{i}=(M^i_{a}/\sum_{t}M^i)/(M^r_{a}/\sum_{t}M^r)&(3)\\
+\textit{ i } &-> \textit{ Countries as exporting and importing commodity}\\
+\textit{ r } &-> \textit{ All countries except i }\\
+\textit{ a } &-> \textit{ Commodity }\\
+\textit{ t } &-> \textit{ All commodities except a }\\
+\textit{X} & \textit{ -> Export of commodity a}\\
+\textit{M} & \textit{ -> Import of commodity a}
+\end{align}$$
+
+
+## Methodology - Modified RCA
+
+Power index (product level);
+
+$$\small\begin{align}
+&Power_{i,j}=ln(RXA^i_{j})-ln(RMA^i_{j})&(4)\\
+&Constraint_{i,j}=(Power_{i,j})^{-1}&(5)\\
+&\text{ where}\\
+&~~~~RXA^i_{j}=(X^{i}_{j}/\sum_{t}X^{i})/(X^{i}_{j}/\sum_{t}X^{j})&(6)\\
+&~~~~RMA^i_{j}=(M^{i}_{j}/\sum_{t}M^{i})/(M^{i}_{j}/\sum_{t}M^{j})&(7)\\
+\textit{ i and j } &-> \textit{Countries as trade partners}\\
+\textit{ t } &-> \textit{All countries except i and j}\\
+\textit{X} & \textit{ -> i to j direction trade (Export of country i)}\\
+\textit{M} & \textit{ -> i to j direction trade (Import of country i)}
+\end{align}$$
+
+## Methodology - Burt & Inoue
+
+* Social Network: Burt Formula
+
+
+$$\small\begin{align}
+&C_{i}=\sum_{j} C_{i,j},  i \neq j
+\textit{ (Burt 1992:Chap 2)}&(8)\\
+&\text{where}\ C_{i,j}
+\text{ is a measure of country i's dependency on j.}\\
+& C_{i,j}=(P_{i,j}+ \sum_{q} P_{iq}P_{qj})^2, i \neq q \neq j&(9)\\
+&\text{where}\ P_{i,j}  \text{ is a measure of country i's direct relation on j and }\\ 
+&\sum_{q} P_{iq}P_{qj}\text{ is a measure of country i's indirect relations on j }\\
+&\text{When we put eq.(4) into (8) assuming}  P_{i,j}=Power_{i,j}/Power_{i}
+\end{align}$$
+
+
+
+
+## Final Form
+
+$$\small\begin{align}
+&P_{i}=(\sum_{i,j}P_{i,j}*\sum_{i,j}M_{i,j})/\sum_{i}M_{i}\text{ (weighted average Total Import}_{i}) &(10)\\
+&P_{i}=\sum_{i,j}P_{i,j}/n&(11)\\
+\textit{ n } &-> \textit{number of country pairs}\\
+\end{align}$$
+
+
+
+## Content for Analysis
+
+* Power Types
+* Density Graphs
+* Bilateral Compoarisons
+* Income Group Comparisons
+* Structural Change
+* Regression
+
+## Prepared Dataset
+
+```{r Loading the data & packages, include=FALSE}
+  
+# Load Packages
+  check.packages <- function(pkg){
+				new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+				if (length(new.pkg)) 
+				    install.packages(new.pkg, dependencies = TRUE)
+				sapply(pkg, require, character.only = TRUE)							}
+				# Packages need to be installed
+      packages<-c("plm","DT",
+                  "data.table",
+				            "huxtable",
+				            "citr",
+				            "ggrepel",
+				            "tibble",
+				            "gganimate",
+				            "reshape2",
+				            "GGally",
+				            "network",
+				            "sna",
+				            "decompr",
+				            "wiod",
+				            "gvc",
+				            "tidyr",
+				            "ggplot2",
+				            "readxl",
+				            "dplyr",
+				            "tidyverse")
+				
+				check.packages(packages)
+load("F:/../Graph_Data_Shaping.RData")
+```
+
+
+```{r}
+data.table(head(C_Power))
+```
+
+
+## Power Types 
+Comparison with time (By Definition)-China
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("CHN"))
+ggplot(	Graph_Yearly, aes(x=factor(year),
+										y=Power_Value,group=factor(Type))) + 
+
+				    labs(
+					    	title 	 = "Power Change (China) ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "year", 
+			       			y 		 = "Power Index"
+		       			) + 
+				       geom_point(aes(colour=factor(Type),shape=factor(Type)))+
+					     scale_shape_manual(values=c(2,3,5,6,15, 16, 17,18))+
+					    
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)
+				
+```
+
+## Power Types 
+Comparison with time -Turkey
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("TUR"))
+
+ggplot(	Graph_Yearly, aes(x=factor(year),
+										y=Power_Value,group=factor(Type))) + 
+
+				    labs(
+					    	title 	 = "Power Index Change (Turkey) between 2000-2014 ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "year", 
+			       			y 		 = "Power Index"
+		       			) + 
+				       geom_point(aes(colour=factor(Type),shape=factor(Type)))+
+					     scale_shape_manual(values=c(2,3,5,6,15, 16, 17,18))+
+					    
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)
+				
+```
+
+## Power Types Comparison 
+Global-DVA 
+
+```{r}
+Graph_Yearly<-filter(C_Power,year%in% c("2014"))
+Graph_Yearly<-filter(Graph_Yearly,Avg_Type%in% c("Weighted"))
+Graph_Yearly<-filter(Graph_Yearly,Trade%in% c("DVA"))
+Graph_Yearly<-filter(Graph_Yearly,Power_Type%in% c("Power_Dir_Ind"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(Type))) + 
+
+				    labs(
+					    	title 	 = "China & Germany Power Balance  ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (One Country Weighted Average)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+				 geom_point()+
+					    
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+			
+					geom_label_repel(aes(label = Exporting_Country),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+	   				geom_smooth(method = "lm", se = FALSE)
+```
+
+## Power Types Comparison 
+Global-VA 
+
+```{r}
+Graph_Yearly<-filter(C_Power,year%in% c("2014"))
+Graph_Yearly<-filter(Graph_Yearly,Avg_Type%in% c("Weighted"))
+Graph_Yearly<-filter(Graph_Yearly,Trade%in% c("VA"))
+Graph_Yearly<-filter(Graph_Yearly,Power_Type%in% c("Power_Dir_Ind"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(Type))) + 
+
+				    labs(
+					    	title 	 = "China & Germany Power Balance  ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (One Country Weighted Average)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+				 geom_point()+
+					    
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+			
+					geom_label_repel(aes(label = Exporting_Country),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+	   				geom_smooth(method = "lm", se = FALSE)
+```
+
+
+
+
+
+## Density Graphs
+DVA: Power & Constraint
+
+```{r Density Graphs}
+C_Mean_Power_Long<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+C_Mean_Power_Long<-C_Mean_Power_Long[,
+							c(	'Exporting_Country',
+								'year',
+								'Power_Value','Constraint_Value'
+							)
+						]
+		C_Mean_Power_Long<-gather(C_Mean_Power_Long,Type,Value,3:4)
+		Graph_Yearly<-filter(C_Mean_Power_Long,year%in% c("2014"))
+	
+		ggplot(	Graph_Yearly, aes(x=Value,
+										colour=factor(Type))) + 
+				    labs(
+					    	title 	 = "Density Distirubtion for Power and Constraint Indexes (2014)",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "Index Value", 
+			       			y 		 = "Density"
+		       			) + 
+					geom_density(alpha=0.4) + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) 
+```
+
+## Density Graphs 
+VA: Power & Constraint
+
+
+```{r Density Graphs-II}
+C_Mean_Power_Long<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+C_Mean_Power_Long<-C_Mean_Power_Long[,
+							c(	'Exporting_Country',
+								'year',
+								'Power_Value','Constraint_Value'
+							)
+						]
+		C_Mean_Power_Long<-gather(C_Mean_Power_Long,Type,Value,3:4)
+		Graph_Yearly<-filter(C_Mean_Power_Long,year%in% c("2014"))
+
+		ggplot(	Graph_Yearly, aes(x=Value,
+										colour=factor(Type))) + 
+				    labs(
+					    	title 	 = "Density Distirubtion for Power and Constraint Indexes (2014)",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "Index Value", 
+			       			y 		 = "Density"
+		       			) + 
+					geom_density(alpha=0.4) + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) 
+```
+
+## Density Graphs 
+DVA-Power:2000 & 2014
+
+
+```{r Density Graphs-III}
+
+    Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+		Graph_Yearly<-filter(Graph_Yearly,year%in% c("2000","2014"))
+		ggplot(	Graph_Yearly, aes(x=Power_Value,
+										colour=factor(year))) + 
+				    labs(
+					    	title 	 = "Density Distirubtion for DVA_Power Index",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000&2014", 
+			       			x 		 = "Index Value", 
+			       			y 		 = "Density"
+		       			) + 
+					geom_density(alpha=0.4) + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) 
+```
+
+## Density Graphs
+VA-Power:2000 & 2014
+
+
+```{r Density Graphs-IV}
+
+    Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+		Graph_Yearly<-filter(Graph_Yearly,year%in% c("2000","2014"))
+		ggplot(	Graph_Yearly, aes(x=Power_Value,
+										colour=factor(year))) + 
+				    labs(
+					    	title 	 = "Density Distirubtion for DVA_Power Index",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000&2014", 
+			       			x 		 = "Index Value", 
+			       			y 		 = "Density"
+		       			) + 
+					geom_density(alpha=0.4) + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) 
+```
+
+
+
+
+## Bilateral Power-Constraint Comparison
+Germany & China: Power (Indirect+direct-VA-WghtedAvg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("DEU","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & DEU Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & VA & Wghted Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+## Bilateral Power-Constraint Comparison
+Germany & China: Power (Indirect+direct-DVA-WghtedAvg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("DEU","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & DEU Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & DVA & Wghted Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+## Bilateral Power-Constraint Comparison
+Germany & China: Power (Indirect+direct-VA-Avg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("DEU","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Mean_VA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & DEU Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & VA & Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+## Bilateral Power-Constraint Comparison
+Germany & China: Power (Indirect+direct-DVA-Avg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("DEU","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & DEU Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & DVA & Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+## Bilateral Power-Constraint Comparison
+Germany & China: Power (Bilateral-VA)
+
+```{r}
+
+# Graph 3 Biateral  DEU vs. China
+
+		Graph_Yearly<-filter(C2C_Power,Exporting_Country%in% c("DEU","CHN"))
+		Graph_Yearly<-filter(Graph_Yearly,Importing_Country%in% c("DEU","CHN"))
+		ggplot(	Graph_Yearly, aes(x=Power_Dir_Ind,
+										y=Constraint_Ind,colour=factor(Exporting_Country))) + 
+
+				    labs(
+					    	title 	 = "China & Germany Power Balance (Bilateral Trade) ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+## Bilateral Power-Constraint Comparison
+USA & China: Power (Indirect+direct-VA-WghtedAvg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("USA","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & USA Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & VA & Wghted Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+
+## Bilateral Power-Constraint Comparison
+USA & China: Power (Indirect+direct-DVA-WghtedAvg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("USA","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & USA Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & DVA & Wghted Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+
+
+## Bilateral Power-Constraint Comparison
+USA & China: Power (Indirect+direct-VA-Avg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("USA","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Mean_VA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & USA Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & VA & Mean Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+
+## Bilateral Power-Constraint Comparison
+USA & China: Power (Indirect+direct-DVA-Avg)
+
+```{r}
+
+Graph_Yearly<-filter(C_Power,Exporting_Country%in% c("USA","CHN"))
+Graph_Yearly<-filter(Graph_Yearly,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+
+					ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=Exporting_Country)) + 
+
+				    labs(
+					    	title 	 = "China & USA Power Balance ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014 (Indirect+direct & DVA & Avg)", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+				   
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+
+
+## Bilateral Power-Constraint Comparison
+USA & China: Power (Bilateral-VA)
+
+```{r}
+
+# Graph 3 Biateral  DEU vs. China
+
+		Graph_Yearly<-filter(C2C_Power,Exporting_Country%in% c("USA","CHN"))
+		Graph_Yearly<-filter(Graph_Yearly,Importing_Country%in% c("USA","CHN"))
+		ggplot(	Graph_Yearly, aes(x=Power_Dir_Ind,
+										y=Constraint_Ind,colour=factor(Exporting_Country))) + 
+
+				    labs(
+					    	title 	 = "China & USA Power Balance (Bilateral Trade) ",
+			       			subtitle = "Country Level Dependency ",
+			      			caption  = "Source: WIOD 2016, 2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+				
+					geom_point() + 
+					
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	)+
+					
+					### this add the labels to the points using their rownames
+					### font = 2 is bold
+
+					geom_label_repel(aes(label = year),
+	                  box.padding   = 0.15, 
+	                  point.padding = 0.2,
+	                  segment.color = 'grey50') +
+	   				geom_path()+
+				    scale_fill_manual(guide = guide_legend(override.aes = list(label = "foo")))
+
+```
+
+
+
+
+
+## Income Group
+Global: Power-Constraint 
+(Indirect+direct-VA-Wghted Avg)
+
+```{r}
+		Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(IncomeGroup))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+## Income Group
+Global: Power-Constraint 
+(Indirect+direct-DVA-Wghted Avg)
+
+```{r}
+		Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(IncomeGroup))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+## Income Group
+Global: Power-Constraint 
+(Indirect+direct-VA-Wghted Avg)
+
+```{r}
+		Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+		Graph_Yearly<-filter(Graph_Yearly,year%in% c("2000","2014"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(year))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+## Income Group
+Global: Power-Constraint 
+(Indirect+direct-DVA-Wghted Avg)
+
+```{r}
+		Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+		Graph_Yearly<-filter(Graph_Yearly,year%in% c("2000","2014"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(year))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+
+
+## Income Group
+Global: Power-Constraint 
+(Indirect+direct-DVA-Wghted Avg)
+
+```{r}
+		Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Weighted_DVA"))
+		Graph_Yearly<-filter(Graph_Yearly,year%in% c("2000","2014"))
+
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(year))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = " For different income levels ",
+			      			caption  = "Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+
+
+## Structural Change
+(Indirect+direct-DVA-Wghted Avg)
+
+```{r}
+Graph_Yearly<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+ggplot(	Graph_Yearly, aes(x=Power_Value,
+										y=Constraint_Value,colour=factor(StBreak))) + 
+				    labs(
+					    	title 	 = "Global Power Distribution  ",
+			       			subtitle = "For StBreak Year = 2008",
+			      			caption  = ">2008 ->1,<=2008 ->0, Source: WIOD 2016, 2000-2014", 
+			       			x 		 = "Power Index", 
+			       			y 		 = "Constraint Index"
+		       			) + 
+					geom_point() + 
+				    theme(	
+				    	strip.background = 
+				    		element_rect(	colour  ="black",
+					    	 				fill    ="white", 
+				     						size    = 1.5, 
+				     						linetype="solid"),
+				    	strip.text.x = 
+				    		element_text(	size    =  6),
+				    	axis.text.x = 
+				    		element_text(	angle   = 90,
+				    		 				hjust   = 1),
+				    	plot.title = 
+				    		element_text(	hjust   = 0.5)
+				    	) +
+	   				geom_smooth(method = "lm", se = FALSE)
+						 
+```
+
+
+
+
+
+## Regression Model
+
+$$\small\begin{align}
+&Log_{10}(GDP_{t})=\beta_{0}+IncomeGroup+\epsilon&\textit{(Model 1)}\\
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t-1})+\beta_{2}Log_{10}(ConstraintIndex_{t-1})+\epsilon&\textit{(Model 2)}\\
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t-1})+\beta_{2}Log_{10}(ConstraintIndex_{t-1})+IncomeGroup+\epsilon&\textit{(Model 3)}\\
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t-1})+\beta_{2}Log_{10}(ConstraintIndex_{t-1})+StBreak+\epsilon&\textit{(Model 4)}\\
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t})+\beta_{2}Log_{10}(ConstraintIndex_{t})+StBreak+\epsilon&\textit{(Model 5)}\\
+&\textit{ StBreak } -> \textit{ 2008 Economical Crisis}\\
+&\textit{ Index Type } -> \textit{ DVA/VA & Mean/Weighted Averages}\\
+\end{align}$$
+
+
+## Regression (DVA)-Weighted
+between GDP and Power Index from Traditional Trade Data
+
+```{r,include=FALSE, results = 'hide'}
+
+#VA
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+
+
+Model1<-lm(log10(GDP) ~ IncomeGroup,Power, na.action=na.exclude)
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value)),Power, na.action=na.exclude)
+Model3<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+IncomeGroup,Power, na.action=na.exclude)
+Model4<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+Model5<-lm(log10(GDP) ~ log10(Power_Value)+log10(Constraint_Value)+StBreak,Power, na.action=na.exclude)
+
+```
+
+```{r}
+huxley<-huxreg(Model1,Model2,Model3,Model4,Model5,error_pos = 'same')
+
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
+
+## Regression (Traditional Trade Data)-weighted
+between GDP and Power Index from Traditional Trade Data
+
+```{r,include=FALSE, results = 'hide'}
+
+#VA
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+
+
+Model1<-lm(log10(GDP) ~ IncomeGroup,Power, na.action=na.exclude)
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value)),Power, na.action=na.exclude)
+Model3<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+IncomeGroup,Power, na.action=na.exclude)
+Model4<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+Model5<-lm(log10(GDP) ~ log10(Power_Value)+log10(Constraint_Value)+StBreak,Power, na.action=na.exclude)
+
+```
+
+```{r}
+huxley<-huxreg(Model1,Model2,Model3,Model4,Model5,error_pos = 'same')
+
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
+## Regression (DVA)- (Mean)
+between GDP and Power Index from Traditional Trade Data
+
+```{r,include=FALSE, results = 'hide'}
+
+#VA
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+
+
+Model1<-lm(log10(GDP) ~ IncomeGroup,Power, na.action=na.exclude)
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value)),Power, na.action=na.exclude)
+Model3<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+IncomeGroup,Power, na.action=na.exclude)
+Model4<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+Model5<-lm(log10(GDP) ~ log10(Power_Value)+log10(Constraint_Value)+StBreak,Power, na.action=na.exclude)
+
+```
+
+```{r}
+huxley<-huxreg(Model1,Model2,Model3,Model4,Model5,error_pos = 'same')
+
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+## Regression (Traditional Trade Data)- (Mean)
+between GDP and Power Index from Traditional Trade Data
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA
+
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_VA"))
+
+Model1<-lm(log10(GDP) ~ IncomeGroup,Power, na.action=na.exclude)
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value)),Power, na.action=na.exclude)
+Model3<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+IncomeGroup,Power, na.action=na.exclude)
+Model4<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+Model5<-lm(log10(GDP) ~ log10(Power_Value)+log10(Constraint_Value)+StBreak,Power, na.action=na.exclude)
+
+```
+
+```{r}
+huxley<-huxreg(Model1,Model2,Model3,Model4,Model5,error_pos = 'same')
+
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
+
+
+## Regression Model
+
+
+$$\small\begin{align}
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t-1})+\beta_{2}Log_{10}(ConstraintIndex_{t-1})+StBreak&\textit{(DVA)}\\
+&Log_{10}(GDP_{t})=\beta_{0}+\beta_{1}Log_{10}(PowerIndex_{t-1})+\beta_{2}Log_{10}(ConstraintIndex_{t-1})+StBreak&\textit{(Traditional Trade)}\\
+&\textit{ StBreak } -> \textit{ 2008 Economical Crisis}\\
+&\textit{ Index Type } -> \textit{  Mean/Weighted Averages}\\
+\end{align}$$
+
+
+## DVA and VA Comparison
+
+```{r,include=FALSE, results = 'hide'}
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+Model1<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+```
+
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+```
+
+## DVA and VA Comparison (Mean)
+
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_VA"))
+Model1<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+Model2<-lm(log10(GDP) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+
+```
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
+
+## DVA and VA Comparison-Income
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+Model1<-lm(log10(Income) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+Model2<-lm(log10(Income) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+
+```
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+## DVA and VA Comparison-Income (Mean)
+
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_VA"))
+Model1<-lm(log10(Income) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+Model2<-lm(log10(Income) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+
+```
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
+
+
+## DVA and VA Comparison-Emission
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_VA"))
+Model1<-lm(log10(Emission) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Weighted_DVA"))
+Model2<-lm(log10(Emission) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+
+```
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+## DVA and VA Comparison-Emission (Mean)
+
+
+```{r,include=FALSE, results = 'hide'}
+
+# VA & DVA Comparison on Country Level
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_VA"))
+Model1<-lm(log10(Emission) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model1)
+Power<-filter(C_Power,Type%in% c("Power_Dir_Ind_Mean_DVA"))
+Model2<-lm(log10(Emission) ~ log10(lag(Power_Value))+log10(lag(Constraint_Value))+StBreak,Power, na.action=na.exclude)
+anova(Model2)
+
+```
+
+```{r}
+huxley<-huxreg("Traditional Trade"=Model1,"GVC Trade"=Model2,error_pos = 'same')
+suppressPackageStartupMessages(library(dplyr))
+huxley %>%
+theme_article %>%
+set_font_size(final(), 1, 7) %>%
+set_bold(final(), 1, FALSE) %>%
+set_top_border(final(), 1, 1) %>%
+set_caption('Linear regressions of diamond prices')
+
+```
+
+
